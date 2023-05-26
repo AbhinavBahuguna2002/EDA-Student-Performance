@@ -16,6 +16,7 @@ def get_requirements (file_path:str)->List[str]:
         # \n also gets read so we replace it with blank
         [req.replace("\n", "") for req in requirements]
 
+        # we don't need -e . in requirements so we remove it
         if HYPHEN_E_DOT in requirements:
             requirements.remove(HYPHEN_E_DOT)
         
